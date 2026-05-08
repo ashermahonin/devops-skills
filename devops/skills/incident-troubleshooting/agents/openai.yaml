@@ -1,0 +1,7 @@
+interface:
+  display_name: "Incident Troubleshooting"
+  short_description: "Incidents, outages, recovery, timelines, and prevention."
+  brand_color: "#B86B00"
+  default_prompt: "Use $incident-troubleshooting to stabilize this incident, build evidence, propose safe checks, and prepare recovery or rollback."
+policy:
+  allow_implicit_invocation: true

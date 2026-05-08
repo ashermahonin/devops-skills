@@ -1,0 +1,7 @@
+interface:
+  display_name: "Network VPN Security"
+  short_description: "Secure routing, DNS, firewall, VPN, and private connectivity."
+  brand_color: "#174F43"
+  default_prompt: "Use $network-vpn-security to design or debug this connectivity path with trust boundaries, least privilege, validation, and rollback."
+policy:
+  allow_implicit_invocation: true

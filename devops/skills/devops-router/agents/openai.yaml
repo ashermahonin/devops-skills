@@ -1,0 +1,7 @@
+interface:
+  display_name: "DevOps Router"
+  short_description: "Routes DevOps work through safe skill chains."
+  brand_color: "#174F43"
+  default_prompt: "Use $devops-router to classify this DevOps request, choose the safest skill chain, and define validation and rollback gates."
+policy:
+  allow_implicit_invocation: true

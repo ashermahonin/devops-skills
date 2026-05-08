@@ -1,0 +1,7 @@
+interface:
+  display_name: "Observability Operations"
+  short_description: "Metrics, logs, traces, dashboards, alerts, and SLOs."
+  brand_color: "#2F7D46"
+  default_prompt: "Use $observability-operations to design telemetry, dashboards, alerts, validation checks, and runbook-ready observability."
+policy:
+  allow_implicit_invocation: true

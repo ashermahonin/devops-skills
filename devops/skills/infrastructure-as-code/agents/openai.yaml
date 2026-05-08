@@ -1,0 +1,7 @@
+interface:
+  display_name: "Infrastructure As Code"
+  short_description: "Terraform, OpenTofu, Pulumi, plans, state, and policy."
+  brand_color: "#174F43"
+  default_prompt: "Use $infrastructure-as-code to design this IaC change with provider validation, state awareness, plan review, and rollback notes."
+policy:
+  allow_implicit_invocation: true

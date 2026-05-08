@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "default_skill": "devops-router",
+  "principles": [
+    "route broad DevOps work before implementation",
+    "verify current documentation before platform-specific code or configuration",
+    "prefer least privilege, idempotency, validation, and rollback",
+    "keep assumptions, risks, and blast radius explicit"
+  ],
+  "skills": [
+    {
+      "name": "devops-router",
+      "phase": "classification",
+      "permission": "read-only",
+      "triggers": ["devops", "infrastructure", "operations", "deployment", "platform", "automation"],
+      "routes_to": ["kubernetes-operations", "cloud-operations", "observability-operations", "cicd-automation", "scripting-automation", "infrastructure-as-code", "container-platforms", "security-secrets", "incident-troubleshooting", "network-vpn-security"]
+    },
+    {
+      "name": "kubernetes-operations",
+      "phase": "platform",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["kubernetes", "helm", "kustomize", "manifest", "pod", "service", "ingress", "rbac", "networkpolicy"]
+    },
+    {
+      "name": "cloud-operations",
+      "phase": "platform",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["aws", "gcp", "azure", "cloudflare", "digitalocean", "yandex cloud", "vk cloud", "selectel", "sbercloud", "mts web services", "iam", "vpc", "region"]
+    },
+    {
+      "name": "observability-operations",
+      "phase": "verification",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["metrics", "logs", "traces", "prometheus", "grafana", "loki", "elk", "opensearch", "opentelemetry", "alert"]
+    },
+    {
+      "name": "cicd-automation",
+      "phase": "delivery",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["ci", "cd", "pipeline", "github actions", "gitlab ci", "jenkins", "argo", "release", "deploy"]
+    },
+    {
+      "name": "scripting-automation",
+      "phase": "automation",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["bash", "python", "powershell", "script", "cli", "migration", "diagnostic"]
+    },
+    {
+      "name": "infrastructure-as-code",
+      "phase": "infrastructure",
+      "permission": "scoped-write-after-plan",
+      "triggers": ["terraform", "opentofu", "pulumi", "cloudformation", "bicep", "arm", "crossplane", "provider", "state"]
+    },
+    {
+      "name": "container-platforms",
+      "phase": "runtime",
+      "permission": "scoped-write-after-validation",
+      "triggers": ["docker", "buildkit", "podman", "compose", "oci", "image", "registry", "container"]
+    },
+    {
+      "name": "security-secrets",
+      "phase": "security",
+      "permission": "security-reviewed-write",
+      "triggers": ["secret", "vault", "kms", "sops", "sealed secrets", "iam", "rbac", "policy", "scan", "sbom", "signing"]
+    },
+    {
+      "name": "incident-troubleshooting",
+      "phase": "incident",
+      "permission": "minimal-risk-action-first",
+      "triggers": ["incident", "outage", "degradation", "broken deploy", "rollback", "latency", "error spike"]
+    },
+    {
+      "name": "network-vpn-security",
+      "phase": "connectivity",
+      "permission": "security-reviewed-write",
+      "triggers": ["network", "vpn", "vpc", "vnet", "subnet", "route", "dns", "firewall", "acl", "security group", "private endpoint", "mtu"]
+    }
+  ],
+  "combinations": [
+    {
+      "when": "cloud infrastructure managed by code",
+      "chain": ["devops-router", "infrastructure-as-code", "cloud-operations", "security-secrets"]
+    },
+    {
+      "when": "application image and delivery pipeline",
+      "chain": ["devops-router", "container-platforms", "cicd-automation", "security-secrets"]
+    },
+    {
+      "when": "production Kubernetes change",
+      "chain": ["devops-router", "kubernetes-operations", "observability-operations", "security-secrets"]
+    },
+    {
+      "when": "active incident",
+      "chain": ["devops-router", "incident-troubleshooting", "observability-operations"]
+    },
+    {
+      "when": "private connectivity or VPN",
+      "chain": ["devops-router", "network-vpn-security", "security-secrets", "cloud-operations"]
+    }
+  ],
+  "handoff_contract": [
+    "task understanding",
+    "chosen skill chain",
+    "documentation validation status",
+    "implementation or plan",
+    "verification steps",
+    "risks and rollback",
+    "assumptions"
+  ]
+}

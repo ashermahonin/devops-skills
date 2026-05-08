@@ -1,0 +1,7 @@
+interface:
+  display_name: "Scripting Automation"
+  short_description: "Safe Bash, Python, and PowerShell automation."
+  brand_color: "#B86B00"
+  default_prompt: "Use $scripting-automation to write or review this operational script with safe flags, validation, and clear failure behavior."
+policy:
+  allow_implicit_invocation: true

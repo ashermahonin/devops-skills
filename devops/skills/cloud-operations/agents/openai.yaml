@@ -1,0 +1,7 @@
+interface:
+  display_name: "Cloud Operations"
+  short_description: "Cloud architecture, IAM, networking, HA, and cost."
+  brand_color: "#174F43"
+  default_prompt: "Use $cloud-operations to design this cloud change with provider docs, IAM, networking, reliability, cost, and rollback checks."
+policy:
+  allow_implicit_invocation: true

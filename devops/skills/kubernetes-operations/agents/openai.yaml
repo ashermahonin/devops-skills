@@ -1,0 +1,7 @@
+interface:
+  display_name: "Kubernetes Operations"
+  short_description: "Design, validate, and troubleshoot Kubernetes work."
+  brand_color: "#2F73D9"
+  default_prompt: "Use $kubernetes-operations to design and validate this Kubernetes change with rollout, rollback, and security checks."
+policy:
+  allow_implicit_invocation: true

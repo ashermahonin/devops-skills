@@ -1,0 +1,7 @@
+interface:
+  display_name: "CI/CD Automation"
+  short_description: "Safe build, test, scan, deploy, and rollback flows."
+  brand_color: "#2F73D9"
+  default_prompt: "Use $cicd-automation to design or fix this pipeline with quality gates, secure auth, validation, and rollback."
+policy:
+  allow_implicit_invocation: true
