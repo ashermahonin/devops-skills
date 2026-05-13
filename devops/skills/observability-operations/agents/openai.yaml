@@ -3,5 +3,11 @@ interface:
   short_description: "Metrics, logs, traces, dashboards, alerts, and SLOs."
   brand_color: "#2F7D46"
   default_prompt: "Use $observability-operations to design telemetry, dashboards, alerts, validation checks, and runbook-ready observability."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

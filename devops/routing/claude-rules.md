@@ -11,7 +11,11 @@ Use these rules when DevOps skills are installed into Claude Code.
 
 ## Documentation Check
 
-For platform-specific manifests, pipeline syntax, cloud resources, IaC providers, CLIs, APIs, and security tooling, verify current documentation before generating implementation details. If the documentation check is unavailable, say that clearly and lower confidence.
+For platform-specific manifests, pipeline syntax, cloud resources, IaC providers, CLIs, APIs, and security tooling, use Context7 MCP before generating implementation details. If the documentation check is unavailable, say that clearly and lower confidence.
+
+## Principal-Level Bar
+
+Apply `devops/routing/principal-operating-model.md`: evidence before confidence, decision trace, operational risk budget, validation ladder, least privilege, supply-chain trust, rollback, and clear handoff.
 
 ## Safety
 

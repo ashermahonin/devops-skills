@@ -3,5 +3,11 @@ interface:
   short_description: "Safe Bash, Python, and PowerShell automation."
   brand_color: "#B86B00"
   default_prompt: "Use $scripting-automation to write or review this operational script with safe flags, validation, and clear failure behavior."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

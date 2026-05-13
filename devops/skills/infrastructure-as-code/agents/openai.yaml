@@ -3,5 +3,11 @@ interface:
   short_description: "Terraform, OpenTofu, Pulumi, plans, state, and policy."
   brand_color: "#174F43"
   default_prompt: "Use $infrastructure-as-code to design this IaC change with provider validation, state awareness, plan review, and rollback notes."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

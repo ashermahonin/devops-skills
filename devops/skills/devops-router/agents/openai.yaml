@@ -3,5 +3,11 @@ interface:
   short_description: "Routes DevOps work through safe skill chains."
   brand_color: "#174F43"
   default_prompt: "Use $devops-router to classify this DevOps request, choose the safest skill chain, and define validation and rollback gates."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

@@ -99,15 +99,25 @@ def validate_skills() -> None:
         for heading in ["## Role", "## Start By", "## Procedure", "## Output", "## Quality Bar"]:
             if heading not in text:
                 fail(f"{skill_md} missing heading: {heading}")
+        if "## Principal-Level Defaults" not in text:
+            fail(f"{skill_md} missing heading: ## Principal-Level Defaults")
         yaml_text = read(openai_yaml)
         if f"${skill}" not in yaml_text:
             fail(f"{openai_yaml} default prompt must mention ${skill}")
+        if 'value: "context7"' not in yaml_text:
+            fail(f"{openai_yaml} missing Context7 MCP dependency metadata")
     ok("skills are structurally valid")
 
 
 def validate_routing() -> None:
     routing_path = ROOT / "devops" / "routing" / "skills.json"
     data = json.loads(read(routing_path))
+    prereqs = data.get("prerequisites", {})
+    mcp_names = {entry.get("name") for entry in prereqs.get("mcp", [])}
+    if "context7" not in mcp_names:
+        fail("routing prerequisites missing Context7 MCP")
+    if prereqs.get("principal_operating_model") != "devops/routing/principal-operating-model.md":
+        fail("routing prerequisites missing principal operating model")
     names = {entry["name"] for entry in data["skills"]}
     if names != EXPECTED_SKILLS:
         fail("routing skills do not match skill folders")
@@ -127,6 +137,7 @@ def validate_docs() -> None:
         ROOT / "devops" / "docs" / "README.ru.md",
         ROOT / "devops" / "docs" / "project-memory.md",
         ROOT / "devops" / "routing" / "README.md",
+        ROOT / "devops" / "routing" / "principal-operating-model.md",
     ]
     for path in required:
         if not path.is_file():
@@ -137,6 +148,12 @@ def validate_docs() -> None:
         ROOT / "devops" / "docs" / "assets" / "routing-flow.ru.svg",
     ]:
         ET.parse(svg)
+    for path in [ROOT / "README.md", ROOT / "devops" / "docs" / "README.ru.md", ROOT / "devops" / "routing" / "README.md"]:
+        text = read(path)
+        if "Context7 MCP" not in text:
+            fail(f"{path} missing Context7 MCP prerequisite")
+        if "principal" not in text.lower():
+            fail(f"{path} missing principal-level guidance")
 
     link_pattern = re.compile(r"\[[^\]]+\]\(([^)#][^)]+)\)")
     for md in [p for p in ROOT.rglob("*.md") if ".git" not in p.parts]:
@@ -171,7 +188,7 @@ def validate_installer() -> None:
     if not (mode & stat.S_IXUSR):
         fail("install.sh is not executable")
     text = read(installer)
-    for token in ["--global", "--local", "--target", "--dry-run", "CODEX_HOME", "CLAUDE_HOME"]:
+    for token in ["--global", "--local", "--target", "--dry-run", "CODEX_HOME", "CLAUDE_HOME", "Context7 MCP"]:
         if token not in text:
             fail(f"install.sh missing {token}")
     ok("installer is present and executable")

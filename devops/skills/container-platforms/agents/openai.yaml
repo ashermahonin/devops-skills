@@ -3,5 +3,11 @@ interface:
   short_description: "Docker, Compose, OCI images, registries, and runtime safety."
   brand_color: "#2F73D9"
   default_prompt: "Use $container-platforms to build or review this container setup with reproducibility, security, healthchecks, and validation."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

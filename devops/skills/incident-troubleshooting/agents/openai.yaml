@@ -3,5 +3,11 @@ interface:
   short_description: "Incidents, outages, recovery, timelines, and prevention."
   brand_color: "#B86B00"
   default_prompt: "Use $incident-troubleshooting to stabilize this incident, build evidence, propose safe checks, and prepare recovery or rollback."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

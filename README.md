@@ -26,9 +26,17 @@ DevOps Skills is a professional operations skill pack for AI coding agents. It g
 
 The repository keeps the root clean and places the working system under one main directory: [`devops/`](devops/).
 
+For production, security-sensitive, or cross-boundary changes, the system applies a principal-level bar: current documentation evidence, explicit decision trace, blast-radius control, least privilege, validation ladder, rollback, and a clean handoff.
+
 ## Routing Diagram
 
 ![DevOps Skills routing flow](devops/docs/assets/routing-flow.svg)
+
+## Prerequisites
+
+- Codex, Claude Code, or another MCP-compatible agent environment.
+- Context7 MCP configured as `context7`/`mcpcontext7` so agents can fetch current cloud, Kubernetes, IaC, CI/CD, container, security, network, CLI, API, and provider documentation before implementation.
+- Access to the target project, platform, or environment required for validation commands and dry-runs.
 
 ## Quick Start
 
@@ -101,9 +109,10 @@ Global installation respects environment-specific homes:
 
 1. `devops-router` reads the request and classifies the work.
 2. The router selects one or more domain skills.
-3. The chosen skills require current documentation checks before platform-specific code or configuration.
-4. Implementation stays scoped to the selected domain and risk level.
-5. Verification, rollback, risks, and assumptions are reported before handoff.
+3. The chosen skills require Context7 MCP documentation checks before platform-specific code or configuration.
+4. High-risk work follows the principal-level operating model before write-heavy changes.
+5. Implementation stays scoped to the selected domain and risk level.
+6. Verification, rollback, risks, and assumptions are reported before handoff.
 
 Common combinations are encoded in [devops/routing/skills.json](devops/routing/skills.json), including IaC plus cloud, containers plus CI/CD, Kubernetes plus security, and incident response plus the affected platform.
 
@@ -131,4 +140,4 @@ sh -n install.sh
 ./install.sh --global --target all --dry-run
 ```
 
-The validator checks skill structure, GitHub documentation, routing, SVG assets, project-memory skeleton, installer health, and accidental machine-specific paths.
+The validator checks skill structure, Context7 MCP metadata, GitHub documentation, routing, SVG assets, project-memory skeleton, installer health, and accidental machine-specific paths.

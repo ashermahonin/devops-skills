@@ -3,10 +3,32 @@
   "default_skill": "devops-router",
   "principles": [
     "route broad DevOps work before implementation",
-    "verify current documentation before platform-specific code or configuration",
+    "use Context7 MCP before provider, platform, API, CLI, manifest, pipeline, or security-control generation",
+    "apply principal-level evidence, decision trace, validation ladder, and rollback to production or high-risk work",
     "prefer least privilege, idempotency, validation, and rollback",
     "keep assumptions, risks, and blast radius explicit"
   ],
+  "prerequisites": {
+    "mcp": [
+      {
+        "name": "context7",
+        "aliases": [
+          "mcpcontext7"
+        ],
+        "required_for": [
+          "cloud/provider documentation",
+          "Kubernetes manifests",
+          "IaC resources",
+          "CI/CD syntax",
+          "container/runtime behavior",
+          "security tooling",
+          "network/VPN configuration",
+          "CLI/API commands"
+        ]
+      }
+    ],
+    "principal_operating_model": "devops/routing/principal-operating-model.md"
+  },
   "skills": [
     {
       "name": "devops-router",
@@ -101,7 +123,8 @@
   "handoff_contract": [
     "task understanding",
     "chosen skill chain",
-    "documentation validation status",
+    "Context7 documentation evidence",
+    "decision trace",
     "implementation or plan",
     "verification steps",
     "risks and rollback",

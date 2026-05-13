@@ -46,6 +46,10 @@ Flags:
 Environment:
   CODEX_HOME        Overrides the global Codex home. Default: $HOME/.codex
   CLAUDE_HOME       Overrides the global Claude Code home. Default: $HOME/.claude
+
+Prerequisite:
+  Context7 MCP should be registered in the target agent as context7/mcpcontext7.
+  This installer installs skills only; it does not configure MCP servers.
 EOF
 }
 

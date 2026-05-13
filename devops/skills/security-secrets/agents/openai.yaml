@@ -3,5 +3,11 @@ interface:
   short_description: "Secrets, IAM, RBAC, scanning, signing, and audit."
   brand_color: "#B3261E"
   default_prompt: "Use $security-secrets to design or review this access and secret flow with least privilege, audit, rotation, and validation."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true

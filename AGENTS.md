@@ -19,15 +19,17 @@ This repository packages reusable DevOps skills, routing rules, installer logic,
 
 1. Use `devops-router` for any broad infrastructure, deployment, operations, automation, or platform security request.
 2. Select the narrow domain skill after routing.
-3. Verify current documentation before generating tool-specific configuration, manifests, pipelines, scripts, or cloud resources.
-4. Keep risks, validation, rollback, and assumptions explicit.
-5. Update routing and documentation when a skill is added or renamed.
+3. Use Context7 MCP before generating tool-specific configuration, manifests, pipelines, scripts, cloud resources, CLI commands, provider resources, or security controls.
+4. Apply `devops/routing/principal-operating-model.md` for evidence, risk budget, decision trace, validation ladder, rollback, and handoff.
+5. Keep risks, validation, rollback, and assumptions explicit.
+6. Update routing and documentation when a skill is added or renamed.
 
 ## Definition Of Done
 
 - Skill frontmatter is valid and includes a descriptive trigger.
 - Each skill has `agents/openai.yaml` and at least one reference file.
 - Routing entries match real skill folders.
+- Every skill advertises Context7 MCP metadata and follows the principal-level operating model.
 - `python3 devops/scripts/validate.py` passes.
 - `sh -n install.sh` passes.
 - `./install.sh --global --target all --dry-run` passes.
@@ -37,5 +39,6 @@ This repository packages reusable DevOps skills, routing rules, installer logic,
 
 - Do not place product files outside the `devops/` directory unless they are root entrypoints.
 - Do not add raw source workflow dumps into skill folders.
+- Do not rely on model memory for current provider, platform, API, CLI, IaC, or security syntax when Context7 MCP can verify it.
 - Do not make installer changes without dry-run validation.
 - Do not write secrets, tokens, local usernames, or local machine paths into docs.

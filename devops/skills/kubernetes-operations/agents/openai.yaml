@@ -3,5 +3,11 @@ interface:
   short_description: "Design, validate, and troubleshoot Kubernetes work."
   brand_color: "#2F73D9"
   default_prompt: "Use $kubernetes-operations to design and validate this Kubernetes change with rollout, rollback, and security checks."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "context7"
+      description: "Context7 MCP for current cloud, Kubernetes, IaC, CI/CD, container, security, network, API, CLI, and provider documentation"
+
 policy:
   allow_implicit_invocation: true
