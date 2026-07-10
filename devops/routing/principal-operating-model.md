@@ -1,5 +1,13 @@
 # Principal-Level DevOps Operating Model
 
+<p align="center">
+  <a href="principal-operating-model.ru.md">🇷🇺 Русский</a>
+  &nbsp;·&nbsp; <strong>🇬🇧 English</strong>
+  &nbsp;·&nbsp; <a href="principal-operating-model.es.md">🇪🇸 Español</a>
+  &nbsp;·&nbsp; <a href="principal-operating-model.zh.md">🇨🇳 中文</a>
+  &nbsp;·&nbsp; <a href="README.md">Routing</a>
+</p>
+
 This model raises every DevOps skill from command generation to senior operational judgment. Use it before implementation, before production-affecting changes, and before final handoff.
 
 ## Core Standard

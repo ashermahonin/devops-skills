@@ -80,7 +80,7 @@
 
   <rect x="630" y="438" width="170" height="56" rx="14" class="node plan"/>
   <text x="650" y="462" class="nodeTitle">риски</text>
-  <text x="650" y="481" class="nodeText">security, blast</text>
+  <text x="650" y="481" class="nodeText">безопасность, воздействие</text>
 
   <rect x="870" y="438" width="170" height="56" rx="14" class="node plan"/>
   <text x="890" y="462" class="nodeTitle">откат</text>
@@ -108,7 +108,7 @@
 
   <rect x="222" y="704" width="210" height="50" rx="14" class="node build"/>
   <text x="246" y="727" class="nodeTitle">рабочий процесс</text>
-  <text x="246" y="745" class="nodeText">K8s, cloud, IaC, CI/CD</text>
+  <text x="246" y="745" class="nodeText">K8s, облако, IaC, CI/CD</text>
 
   <rect x="518" y="704" width="170" height="50" rx="14" class="node build"/>
   <text x="543" y="727" class="nodeTitle">реализация</text>
@@ -116,7 +116,7 @@
 
   <rect x="774" y="704" width="170" height="50" rx="14" class="node verify"/>
   <text x="799" y="727" class="nodeTitle">проверка</text>
-  <text x="799" y="745" class="nodeText">tests, dry-run, smoke</text>
+  <text x="799" y="745" class="nodeText">тесты, пробный запуск</text>
 
   <path class="line" d="M432 729 H518"/>
   <path class="line" d="M688 729 H774"/>

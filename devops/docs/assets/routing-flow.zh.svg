@@ -1,0 +1,46 @@
+<svg width="1180" height="940" viewBox="0 0 1180 940" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">DevOps Skills 路由</title>
+  <desc id="desc">四个阶段：分类请求、建立安全关口、执行领域流程、更新项目记忆。</desc>
+  <defs>
+    <filter id="softShadow" x="-12%" y="-18%" width="124%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#17201D" flood-opacity="0.10"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#38524C"/></marker>
+    <style>
+      .bg{fill:#FBFAF7}.shell{fill:#FFF;stroke:#E9E1D5;stroke-width:1.4}.phase{fill:#FFF;stroke:#E6DFD3;stroke-width:1.3;filter:url(#softShadow)}.entry{fill:#1F4F46;stroke:#1B443D}.plan{fill:#F4F0E8;stroke:#DCCFBC}.build{fill:#E8F1FF;stroke:#B8CCE8}.verify{fill:#EEF8EC;stroke:#B8D9B0}.memory{fill:#F8E9F1;stroke:#DCB4C6}.chip{fill:#F7F9F8;stroke:#D9E1DE;stroke-width:1}.title{font:700 38px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#17201D}.subtitle{font:400 18px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5F6F69}.phaseTitle{font:800 16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#425650;letter-spacing:.03em}.phaseSub{font:400 13px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#6D7B76}.nodeTitle{font:800 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#18211F}.nodeText{font:400 12.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#52615C}.entryText,.numText{fill:#FFF}.num{fill:#1F4F46}.numText{font:800 15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.caption{font:600 12.5px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#61716C}.line,.phaseLine,.thinLine{fill:none;stroke:#38524C;marker-end:url(#arrow)}.line{stroke-width:2.4}.phaseLine{stroke-width:2.6}.thinLine{stroke:#6F827C;stroke-width:1.8}
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="940" rx="30"/>
+  <text x="70" y="70" class="title">DevOps Skills 路由</text>
+  <text x="70" y="103" class="subtitle">清晰路径：分类、确认、执行，并记录运维记忆。</text>
+  <rect x="48" y="132" width="1084" height="760" rx="26" class="shell"/>
+  <rect x="82" y="158" width="1016" height="150" rx="20" class="phase"/>
+  <circle cx="118" cy="198" r="18" class="num"/><text x="113" y="204" class="numText">1</text>
+  <text x="148" y="194" class="phaseTitle">分类请求</text><text x="148" y="218" class="phaseSub">在高风险写入前，路由器选择合适的 DevOps 路径。</text>
+  <rect x="150" y="242" width="170" height="46" rx="14" class="entry"/><text x="172" y="271" class="nodeTitle entryText">请求</text>
+  <rect x="430" y="233" width="210" height="64" rx="14" class="entry"/><text x="452" y="258" class="nodeTitle entryText">devops-router</text><text x="452" y="277" class="nodeText entryText">类型、风险、路径</text>
+  <rect x="750" y="233" width="210" height="64" rx="14" class="entry"/><text x="772" y="258" class="nodeTitle entryText">技能链</text><text x="772" y="277" class="nodeText entryText">领域与安全</text>
+  <path class="line" d="M320 265H430"/><path class="line" d="M640 265H750"/>
+  <rect x="82" y="344" width="1016" height="238" rx="20" class="phase"/>
+  <circle cx="118" cy="384" r="18" class="num"/><text x="113" y="390" class="numText">2</text>
+  <text x="148" y="380" class="phaseTitle">设置安全关口</text><text x="148" y="404" class="phaseSub">文档、风险、密钥、影响范围、验证和回滚都需要明确。</text>
+  <rect x="150" y="438" width="170" height="56" rx="14" class="plan"/><text x="170" y="462" class="nodeTitle">上下文</text><text x="170" y="481" class="nodeText">版本、输入</text>
+  <rect x="390" y="438" width="170" height="56" rx="14" class="plan"/><text x="410" y="462" class="nodeTitle">当前文档</text><text x="410" y="481" class="nodeText">语法、限制</text>
+  <rect x="630" y="438" width="170" height="56" rx="14" class="plan"/><text x="650" y="462" class="nodeTitle">风险模型</text><text x="650" y="481" class="nodeText">安全、影响</text>
+  <rect x="870" y="438" width="170" height="56" rx="14" class="plan"/><text x="890" y="462" class="nodeTitle">回滚</text><text x="890" y="481" class="nodeText">应用前准备</text>
+  <path class="line" d="M320 466H390"/><path class="line" d="M560 466H630"/><path class="line" d="M800 466H870"/>
+  <rect x="124" y="526" width="292" height="30" rx="15" class="chip"/><text x="145" y="546" class="caption">默认采用最小权限</text>
+  <rect x="430" y="526" width="282" height="30" rx="15" class="chip"/><text x="451" y="546" class="caption">密钥不进入代码或日志</text>
+  <rect x="728" y="526" width="348" height="30" rx="15" class="chip"/><text x="749" y="546" class="caption">修改可重复且可验证</text>
+  <rect x="82" y="622" width="1016" height="134" rx="20" class="phase"/>
+  <circle cx="118" cy="662" r="18" class="num"/><text x="113" y="668" class="numText">3</text>
+  <text x="148" y="658" class="phaseTitle">执行与验证</text><text x="148" y="682" class="phaseSub">所选技能负责配置、命令、检查和交接。</text>
+  <rect x="222" y="704" width="210" height="50" rx="14" class="build"/><text x="246" y="727" class="nodeTitle">领域流程</text><text x="246" y="745" class="nodeText">K8s、云、IaC、CI/CD</text>
+  <rect x="518" y="704" width="170" height="50" rx="14" class="build"/><text x="543" y="727" class="nodeTitle">实施</text><text x="543" y="745" class="nodeText">范围受控</text>
+  <rect x="774" y="704" width="170" height="50" rx="14" class="verify"/><text x="799" y="727" class="nodeTitle">验证</text><text x="799" y="745" class="nodeText">测试、模拟、冒烟</text>
+  <path class="line" d="M432 729H518"/><path class="line" d="M688 729H774"/>
+  <rect x="82" y="796" width="1016" height="78" rx="20" class="phase"/>
+  <circle cx="118" cy="836" r="18" class="num"/><text x="113" y="842" class="numText">4</text>
+  <text x="148" y="828" class="phaseTitle">更新项目记忆</text><text x="148" y="851" class="phaseSub">运行手册、验证和链接变成可复用的项目上下文。</text>
+  <rect x="610" y="816" width="248" height="42" rx="14" class="memory"/><text x="633" y="842" class="nodeTitle">运维笔记</text>
+  <rect x="900" y="816" width="170" height="42" rx="14" class="memory"/><text x="923" y="842" class="nodeTitle">项目图谱</text><path class="thinLine" d="M858 837H900"/>
+  <path class="phaseLine" d="M590 308V344"/><path class="phaseLine" d="M590 582V622"/><path class="phaseLine" d="M590 756V796"/>
+</svg>

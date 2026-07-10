@@ -134,10 +134,26 @@ def validate_docs() -> None:
         ROOT / "DESIGN.md",
         ROOT / "AGENTS.md",
         ROOT / "CLAUDE.md",
+        ROOT / "devops" / "docs" / "README.md",
         ROOT / "devops" / "docs" / "README.ru.md",
+        ROOT / "devops" / "docs" / "README.es.md",
+        ROOT / "devops" / "docs" / "README.zh.md",
+        ROOT / "devops" / "docs" / "skills-reference.md",
+        ROOT / "devops" / "docs" / "skills-reference.ru.md",
+        ROOT / "devops" / "docs" / "skills-reference.es.md",
+        ROOT / "devops" / "docs" / "skills-reference.zh.md",
         ROOT / "devops" / "docs" / "project-memory.md",
+        ROOT / "devops" / "docs" / "project-memory.ru.md",
+        ROOT / "devops" / "docs" / "project-memory.es.md",
+        ROOT / "devops" / "docs" / "project-memory.zh.md",
         ROOT / "devops" / "routing" / "README.md",
+        ROOT / "devops" / "routing" / "README.ru.md",
+        ROOT / "devops" / "routing" / "README.es.md",
+        ROOT / "devops" / "routing" / "README.zh.md",
         ROOT / "devops" / "routing" / "principal-operating-model.md",
+        ROOT / "devops" / "routing" / "principal-operating-model.ru.md",
+        ROOT / "devops" / "routing" / "principal-operating-model.es.md",
+        ROOT / "devops" / "routing" / "principal-operating-model.zh.md",
     ]
     for path in required:
         if not path.is_file():
@@ -146,13 +162,33 @@ def validate_docs() -> None:
     for svg in [
         ROOT / "devops" / "docs" / "assets" / "routing-flow.svg",
         ROOT / "devops" / "docs" / "assets" / "routing-flow.ru.svg",
+        ROOT / "devops" / "docs" / "assets" / "routing-flow.es.svg",
+        ROOT / "devops" / "docs" / "assets" / "routing-flow.zh.svg",
     ]:
         ET.parse(svg)
-    for path in [ROOT / "README.md", ROOT / "devops" / "docs" / "README.ru.md", ROOT / "devops" / "routing" / "README.md"]:
+    for path in [
+        ROOT / "README.md",
+        ROOT / "devops" / "docs" / "README.md",
+        ROOT / "devops" / "docs" / "README.ru.md",
+        ROOT / "devops" / "docs" / "README.es.md",
+        ROOT / "devops" / "docs" / "README.zh.md",
+        ROOT / "devops" / "routing" / "README.md",
+        ROOT / "devops" / "routing" / "README.ru.md",
+        ROOT / "devops" / "routing" / "README.es.md",
+        ROOT / "devops" / "routing" / "README.zh.md",
+    ]:
         text = read(path)
         if "Context7 MCP" not in text:
             fail(f"{path} missing Context7 MCP prerequisite")
-        if "principal" not in text.lower():
+    for path in [
+        ROOT / "README.md",
+        ROOT / "devops" / "docs" / "README.md",
+        ROOT / "devops" / "docs" / "README.ru.md",
+        ROOT / "devops" / "docs" / "README.es.md",
+        ROOT / "devops" / "docs" / "README.zh.md",
+    ]:
+        text = read(path)
+        if not any(token in text.lower() for token in ["principal", "高级工程"]):
             fail(f"{path} missing principal-level guidance")
 
     link_pattern = re.compile(r"\[[^\]]+\]\(([^)#][^)]+)\)")
@@ -169,7 +205,7 @@ def validate_docs() -> None:
 
 def validate_no_machine_paths() -> None:
     for path in ROOT.rglob("*"):
-        if ".git" in path.parts or path.is_dir():
+        if ".git" in path.parts or path.is_dir() or path.name == ".DS_Store":
             continue
         if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".gif", ".webp"}:
             continue

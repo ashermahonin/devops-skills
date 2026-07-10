@@ -1,5 +1,13 @@
 # DevOps Routing
 
+<p align="center">
+  <a href="README.ru.md">🇷🇺 Русский</a>
+  &nbsp;·&nbsp; <strong>🇬🇧 English</strong>
+  &nbsp;·&nbsp; <a href="README.es.md">🇪🇸 Español</a>
+  &nbsp;·&nbsp; <a href="README.zh.md">🇨🇳 中文</a>
+  &nbsp;·&nbsp; <a href="../docs/README.md">Guide</a>
+</p>
+
 The router turns broad operational requests into a safe, explicit workflow.
 
 ## Flow
